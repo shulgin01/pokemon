@@ -1,0 +1,104 @@
+@import "mixin";
+@import "vars";
+
+@media screen and (max-width: $laptop-size) and (min-width: 1024px){
+  .pokemon{
+    &__params{
+      width: 60%;
+    }
+  }
+}
+@media screen and (max-width: $tablet-size){
+  .pokemons{
+    &__main{
+      & > *{
+        margin-bottom: 10px;
+        &:not(:nth-child(4n+4)){margin-right: 0;}
+        &:not(:nth-child(3n+3)){margin-right: 10px;}
+      }
+      .pokemon-prev {
+        flex: 0 0 calc(100% / 3 - 8px);
+        width: calc(100% / 3 - 8px);
+      }
+    }
+  }
+  .pokemon-prev{
+    &:hover{
+      box-shadow: none;
+    }
+  }
+  .pokemon{
+    &__params{
+      width: 100%;
+    }
+  }
+}
+@media screen and (max-width: $phone-size){
+  .menu{
+    width: 100%;
+    &.active{
+      .sandwich{
+        right: 15px;
+        top: 15px;
+      }
+    }
+  }
+  .pokemons{
+    padding: 20px 0 20px 0;
+    .container{
+      padding: 0 10px;
+    }
+    &__main{
+      & > *{
+        &:not(:nth-child(4n+4)){margin-right: 0;}
+        &:not(:nth-child(3n+3)){margin-right: 0;}
+        &:not(:nth-child(2n+2)){margin-right: 10px;}
+      }
+      .pokemon-prev {
+        flex: 0 0 calc(100% / 2 - 8px);
+        width: calc(100% / 2 - 8px);
+      }
+    }
+  }
+  .pokemon{
+    padding: 20px 0 20px 0;
+    &__main{
+      align-items: flex-start;
+      justify-content: flex-start;
+      flex-direction: column;
+      & > * {
+        margin: 10px 0;
+        &:first-child{
+          margin-top: 0;}
+        &:last-child{
+          margin-bottom: 0;}
+      }
+    }
+    &__slider{
+      width: 100%;
+    }
+    &__info{
+      padding: 20px 0 10px;
+      width: 100%;
+      & > * {
+        margin: 6px 0;
+      }
+    }
+  }
+  .s-not-found{
+    padding: 80px 0 30px;
+  }
+  .not-found{
+    align-items: flex-start;
+    &__number{
+      font-size: 90px;
+    }
+    &__text{
+      text-align: left;
+      font-size: 16px;
+    }
+    &__title{
+      text-align: left;
+    }
+  }
+}

@@ -1,0 +1,43 @@
+.menu{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 30%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $main-color;
+  transition: 0.5s;
+  transform: translateX(-101%);
+  z-index: 10;
+  &.active{
+    transform: translateX(0%);
+    box-shadow: 5px 0 30px rgba(0, 0, 0, .8);
+  }
+  &-list{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 90%;
+    overflow: scroll;
+    width: 80%;
+    flex-direction: column;
+    &::-webkit-scrollbar{
+      width: 0;
+    }
+  }
+  &-item{
+    text-align: center;
+    padding: 10px;
+    &__text{
+      font-size: 16px;
+      color: $white;
+    }
+  }
+  .sandwich{
+    position: absolute;
+    right: -35px;
+    top: 15px;
+  }
+}

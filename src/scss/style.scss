@@ -1,0 +1,136 @@
+@import "vars.scss";
+@import "mixin.scss";
+
+
+html {
+  font-size: $base-font-size;
+  font-family: $main-font;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  height: 100%;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  background-color: $white;
+  color: $black;
+  overflow-x: hidden;
+}
+* {
+  box-sizing: border-box;
+  transition: .25s ease-in-out;
+}
+
+
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+ul[class],
+ol[class] {
+  list-style: none;
+  padding: 0;
+}
+
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd { margin: 0; }
+
+a {
+  color: $black;
+  text-decoration: none !important;
+  &:hover{
+    text-decoration: none !important;
+  }
+}
+
+a:not([class]) { text-decoration-skip-ink: auto; }
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select { font: inherit; }
+
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video,
+textarea {
+  vertical-align: middle;
+  outline: none;
+}
+
+input[type=text],
+input[type=submit],
+input[type=search],
+textarea{
+  -webkit-appearance: none;
+}
+
+textarea { resize: none; }
+
+section {
+  position: relative;
+  padding: 40px 0;
+}
+
+input,
+select,
+button { outline: none; }
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  outline: none;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.content { flex: 1 0 auto; }
+
+.container {
+  margin: 0 auto;
+  max-width: $content-size;
+  padding: 0 40px;
+  width: 100%;
+}
+// Модули
+@import "modules/modules";
